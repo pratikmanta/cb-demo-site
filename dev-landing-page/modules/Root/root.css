@@ -1,0 +1,105 @@
+html {
+    padding: 10px;
+    font-size: 12px;
+    background: rgba(209,153,0,1);
+    background: linear-gradient(135deg, rgba(209,153,0,1) 7%, rgba(209,153,0,1) 35%, rgba(255,231,10,1) 63%, rgba(255,231,10,1) 73%);
+  }
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+ol, ul {
+    list-style: none;
+  }
+  
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 30px;
+	text-align: center;
+}
+
+.intro {
+	font-family: 'Reem Kufi', sans-serif;
+	font-size: 5.75em;
+	font-weight: 600;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 3.9s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.tagline {
+	font-size: 1.5rem;
+	margin: 1.5rem 0;
+	font-weight: 100;
+}
+
+.icons-social i {
+  padding: 10px;
+}
+
+.profile {
+    border-radius: 50%;
+}
+.pulse-button-container {
+	margin-top: '40px';
+	padding: '10px';
+
+}
+.pulse-button {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(80, 76, 76, 0.74);
+    border-radius: 50%;
+    background-color: #3b3805;
+    background-size:cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+  .pulse-button:hover 
+  { 
+    -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+  }
+  
+  @-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+  @-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+  @-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+  @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  @media screen and (min-width: 300px) and (max-width:1300px){
+    .profile {
+      width: 300px;
+    }
+    .intro {
+      font-size: 3.8em;
+    }
+  }
