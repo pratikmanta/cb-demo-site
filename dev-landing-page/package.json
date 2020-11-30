@@ -1,53 +1,53 @@
 {
-  "name": "dev-landing-page",
-  "version": "1.0.0",
-  "description": "Minimal landing page for developers.",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "create": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-syntax-dynamic-import"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flexdinesh/dev-landing-page.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/flexdinesh/dev-landing-page/issues"
-  },
-  "homepage": "https://github.com/flexdinesh/dev-landing-page#readme",
-  "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "react": "^16.11.0",
-    "react-card-flip": "^1.0.10",
-    "react-dom": "^16.11.0",
-    "react-reveal": "^1.2.2",
-    "react-router-dom": "^5.1.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  }
+	"name": "dev-landing-page",
+	"version": "1.0.0",
+	"description": "Minimal landing page for developers.",
+	"main": "index.js",
+	"scripts": {
+		"start": "webpack-dev-server --open",
+		"create": "webpack",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		],
+		"plugins": [
+			"@babel/plugin-proposal-class-properties",
+			"@babel/plugin-syntax-dynamic-import"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/flexdinesh/dev-landing-page.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/flexdinesh/dev-landing-page/issues"
+	},
+	"homepage": "https://github.com/flexdinesh/dev-landing-page#readme",
+	"dependencies": {
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"react": "^16.11.0",
+		"react-card-flip": "^1.0.10",
+		"react-dom": "^16.11.0",
+		"react-reveal": "^1.2.2",
+		"react-router-dom": "^5.1.2"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.4",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"@babel/preset-env": "^7.6.3",
+		"@babel/preset-react": "^7.6.3",
+		"babel-loader": "^8.0.6",
+		"css-loader": "3.2.0",
+		"html-webpack-plugin": "^3.2.0",
+		"style-loader": "^1.0.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.9.0"
+	}
 }
