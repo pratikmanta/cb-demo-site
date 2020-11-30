@@ -1,199 +1,177 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
 @import url('https://fonts.googleapis.com/css?family=Supermercado+One&display=swap');
 
-*, *::after, *::before {
-    box-sizing: border-box;
-  }
-  
-  .container {
-    line-height: 1;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background: #38393a;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    overflow: hidden;
-    box-shadow: 0 0 30px #FFEB3B;
-    transition: transform .5s;
-  }
-  
-  .nav-open .content {
-    transform: perspective(800px) scaleY(0.75) rotateY(15deg);
-  }
-  
-  .nav-trigger {
-    position: fixed;
-    z-index: 4;
-    top: 40px;
-    left: 40px;
-    height: 44px;
-    width: 44px;
-    overflow: hidden;
-    color: transparent;
-    border: '1px solid black';
-    white-space: nowrap;
-    text-indent: 100%;
-  }
-  
-  .nav-trigger span,
-  .nav-trigger span::before,
-  .nav-trigger span::after {
-    position: absolute;
-    height: 4px;
-    width: 36px;
-    background:#000;
-  }
-  
-  .nav-trigger span {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: background .3s;
-  }
-  
-  .nav-trigger span::before,
-  .nav-trigger span::after {
-    content: '';
-    top: 0;
-    left: 0;
-    transition: background .3s, transform .3s;
-  }
-  
-  .nav-trigger span::before {
-    transform: translateY(-12px);
-  }
-  
-  .nav-trigger span::after {
-    transform: translateY(12px);
-  }
-  
-  .nav-trigger:hover span, 
-  .nav-trigger:hover span::before,
-  .nav-trigger:hover span::after {
-    background: black;
-  }
-  
-  .nav-open .nav-trigger span {
-    background: transparent;
-  }
-  
-  .nav-open .nav-trigger span::before,
-  .nav-open .nav-trigger span::after {
-    background: #F3F3F3;
-  }
-  
-  .nav-open .nav-trigger span::before {
-    transform: rotate(-45deg);
-  }
-  
-  .nav-open .nav-trigger span::after {
-    transform: rotate(45deg);
-  }
-  
-  .overlay {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1C1D21;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s, visibility .5s;
-  }
-  
-  .nav-open .overlay {
-    opacity: .4;
-    visibility: visible;
-  }
-  
-  .nav-container {
-    position: fixed;
-    z-index: 5;
-    top:0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    max-width: 420px;
-    padding: 1em 3.5em;
-    background: rgb(0, 0, 0, 0.7);
-    overflow: auto;
-    transform: translateZ(0);
-    transform: translateX(100%);
-    transition: transform .5s cubic-bezier(.07,.23,.34,1);
-  }
-  
-  .nav-open .nav-container {
-    transform: translateX(0);
-  }
-  
-  .nav-container h2 {
-    font-size: '30px';
-    font-weight: bold;
-    text-transform: uppercase;
-    color: white;
-    margin: 1.5em 0;
-  }
-  
-  .nav {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-  }
-  
-  .nav a {
-    display: block;
-    padding: .4em 0;
-    font-size: 40px;
-    margin: .4em 0;
-    font-weight: bold;
-    font-family: 'Supermercado One', cursive;
-    text-decoration: none;
-    color: #F3F3F3;
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
 
-  }
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0 30px;
+	text-align: center;
+	height: 100vh;
+	transition: transform 0.5s;
+}
 
-  
-  .nav-open .nav a {
-    animation: slide-in .5s .3s backwards;
-  }
+.nav-open main {
+	transform: perspective(800px) scaleY(0.8) rotateY(20deg);
+}
 
-  .nav-open .nav li:nth-of-type(2) a {
-    animation-delay: .6s;
-  }
-  
-  .nav-open .nav li:nth-of-type(3) a {
-    animation-delay: .9s;
-  }
-  
-  .contact-section {
-    display: 'flex';
-    color: #F3F3F3;
-    text-align: center;
-  }
+.nav-trigger {
+	position: absolute;
+	z-index: 3;
+	top: 40px;
+	left: 40px;
+	height: 44px;
+	width: 44px;
+	overflow: hidden;
+	color: transparent;
+	cursor: pointer;
+}
 
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-      transform: translateX(80px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+.nav-trigger span,
+.nav-trigger span::before,
+.nav-trigger span::after {
+	position: absolute;
+	height: 4px;
+	width: 36px;
+	background: #000;
+}
 
-  @media screen and (min-width: 300px) and (max-width:1300px){
-    .nav-trigger {
-      z-index: 6;
-    }
-  }
+.nav-trigger span {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
-  
+.nav-trigger span::before,
+.nav-trigger span::after {
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.nav-trigger span::before {
+	transform: translateY(-12px);
+}
+
+.nav-trigger span::after {
+	transform: translateY(12px);
+}
+
+.nav-open .nav-trigger span {
+	background: transparent;
+}
+
+.nav-open .nav-trigger span::before,
+.nav-open .nav-trigger span::after {
+	background: #f3f3f3;
+}
+
+.nav-open .nav-trigger span::before {
+	transform: rotate(-45deg);
+}
+
+.nav-open .nav-trigger span::after {
+	transform: rotate(45deg);
+}
+
+.overlay {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #1c1d21;
+	opacity: 0;
+	transition: opacity 0.5s, visibility 0.5s;
+}
+
+.nav-open .overlay {
+	opacity: 0.4;
+}
+
+.nav-container {
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 420px;
+	padding: 1em 3.5em;
+	background: rgb(0, 0, 0, 0.5);
+	overflow: hidden;
+	transform: translateX(100%);
+	transition: transform 0.5s cubic-bezier(0.07, 0.23, 0.34, 1);
+}
+
+.nav-open .nav-container {
+	transform: translateX(0);
+}
+
+.nav-container h2 {
+	font-size: '30px';
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	margin: 1.5em 0;
+}
+
+.nav {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+}
+
+.nav a {
+	display: block;
+	padding: 0.4em 0;
+	font-size: 40px;
+	margin: 0.4em 0;
+	font-weight: bold;
+	font-family: 'Supermercado One', cursive;
+	text-decoration: none;
+	color: #f3f3f3;
+}
+
+.nav-open .nav a {
+	animation: slide-in 0.5s 0.3s backwards;
+}
+
+.nav-open .nav li:nth-of-type(2) a {
+	animation-delay: 0.6s;
+}
+
+.nav-open .nav li:nth-of-type(3) a {
+	animation-delay: 0.9s;
+}
+
+.contact-section {
+	display: 'flex';
+	color: #f3f3f3;
+	text-align: center;
+}
+
+@keyframes slide-in {
+	0% {
+		opacity: 0;
+		transform: translateX(80px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@media screen and (min-width: 300px) and (max-width: 1300px) {
+	.nav-trigger {
+		z-index: 6;
+	}
+}
