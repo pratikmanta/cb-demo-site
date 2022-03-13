@@ -2,22 +2,21 @@ body {
 	margin: 0;
 	padding: 0;
 	font-weight: normal;
-	overflow: hidden;
 	font-family: 'Roboto', sans-serif;
 }
 
 .container {
 	line-height: 1;
 	background: url('https://ak.picdn.net/shutterstock/videos/1023138790/thumb/12.jpg');
+	background-position: center;
 	margin: 0;
 	width: 100%;
 	height: 100%;
 }
 
 main {
-	background-image: url('https://previews.123rf.com/images/gatordawg/gatordawg1202/gatordawg120200030/12474873-an-old-stained-aged-and-damaged-page-of-parchment-with-dripping-and-splattered-blood-stains-across-t.jpg');
-	background-size: 100%;
-	color: #1e1e1e;
+	background-image: url('https://images.creativemarket.com/0.1.0/ps/6305394/300/200/m2/fpnw/wm0/bright-sun-orange-and-yellow-grunge-texture-.jpg?1556291659&s=5e498c38c1b45c90084b4898cb703ee9');
+	background-size: cover;
 }
 
 .icons-social a {
@@ -52,11 +51,18 @@ main {
 
 .profile {
 	border-radius: 50%;
+	margin: auto;
 }
+
+#intro-img .profile {
+	width: 400px;
+}
+
 .pulse-button-container {
 	margin-top: '40px';
 	padding: '10px';
 }
+
 .pulse-button {
 	position: relative;
 	width: 70px;
@@ -107,35 +113,27 @@ main {
 	}
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 300px) and (max-width: 768px) {
 	html {
-		font-size: 14px;
+		font-size: 15px;
 	}
-}
-
-@media (min-width: 768px) {
-	html {
-		font-size: 16px;
+	#intro-img .profile {
+		width: 320px;
+		margin-top: 20px;
 	}
-}
-
-@media (min-width: 992px) {
-	html {
-		font-size: 18px;
+	.nav-container .profile {
+		width: 250px;
 	}
-}
-
-@media (min-width: 1200px) {
-	html {
+	.nav-a {
 		font-size: 20px;
 	}
+	.intro {
+		font-size: 3.2em;
+	}
 }
 
-@media screen and (min-width: 300px) and (max-width: 1300px) {
-	.profile {
-		width: 300px;
-	}
-	.intro {
-		font-size: 3.8em;
+@media screen and (min-width: 1200px) {
+	html {
+		font-size: 20px;
 	}
 }

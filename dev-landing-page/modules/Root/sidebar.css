@@ -18,12 +18,12 @@ main {
 }
 
 .nav-open main {
-	transform: perspective(800px) scaleY(0.8) rotateY(20deg);
+	transform: perspective(700px) scaleY(0.5) rotateY(30deg);
 }
 
 .nav-trigger {
 	position: absolute;
-	z-index: 3;
+	z-index: 4;
 	top: 40px;
 	left: 40px;
 	height: 44px;
@@ -90,23 +90,23 @@ main {
 	background: #1c1d21;
 	opacity: 0;
 	transition: opacity 0.5s, visibility 0.5s;
+	visibility: hidden;
 }
 
 .nav-open .overlay {
-	opacity: 0.4;
+	opacity: 0.6;
+	visibility: visible;
 }
 
 .nav-container {
 	position: fixed;
-	z-index: 4;
+	z-index: 3;
+	background: none;
 	top: 0;
 	right: 0;
-	height: 100%;
-	width: 100%;
 	max-width: 420px;
+	max-height: 80vh;
 	padding: 1em 3.5em;
-	background: rgb(0, 0, 0, 0.5);
-	overflow: hidden;
 	transform: translateX(100%);
 	transition: transform 0.5s cubic-bezier(0.07, 0.23, 0.34, 1);
 }
@@ -158,6 +158,10 @@ main {
 	text-align: center;
 }
 
+.contact-section i {
+	margin-right: 20px;
+}
+
 @keyframes slide-in {
 	0% {
 		opacity: 0;
@@ -167,11 +171,5 @@ main {
 	100% {
 		opacity: 1;
 		transform: translateX(0);
-	}
-}
-
-@media screen and (min-width: 300px) and (max-width: 1300px) {
-	.nav-trigger {
-		z-index: 6;
 	}
 }
