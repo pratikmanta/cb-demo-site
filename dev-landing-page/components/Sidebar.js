@@ -1,11 +1,8 @@
 import React from 'react';
 
-const Sidebar = ({ toggleSidebar }) => {
+const Sidebar = () => {
 	return (
 		<>
-			<a onClick={toggleSidebar} className='nav-trigger'>
-				Menu <span></span>
-			</a>
 			<nav className='nav-container' id='navigation'>
 				<div style={styles.imgContainer}>
 					<img
@@ -66,7 +63,6 @@ const styles = {
 		margin: '8%'
 	},
 	detailsContainer: {
-		display: 'flex',
 		color: 'white',
 		fontFamily: 'Supermercado One, cursive',
 		textAlign: 'center'
