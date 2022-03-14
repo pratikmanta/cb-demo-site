@@ -22,8 +22,7 @@ class Profile extends React.Component {
 		body.classList.toggle('nav-open');
 	};
 
-	toggleExperience = (e) => {
-		console.log(e)
+	toggleExperience = () => {
 		var exp_trigger = document.getElementById('experience-open');
 		exp_trigger.classList.toggle('active');
 		this.setState({ isOpen: !this.state.isOpen });
@@ -44,14 +43,14 @@ class Profile extends React.Component {
 						<i className='faPra fa fa-briefcase'></i>
 					</div>
 					<div className='exp-content'>
-						<h3>{data.position}</h3>
+						<h3>{data.cmp_name}</h3>
 						<div className='date'>
 							<i className='fa fa-calendar'></i>
 							{data.date}
 						</div>
 						<h4>
 							<i className='fa fa-flag'></i>
-							{data.cmp_name}
+							{data.position}
 						</h4>
 						<p className='projectParagraph'>{data.description}</p>
 					</div>
@@ -96,7 +95,7 @@ class Profile extends React.Component {
 								<div>
 									<a
 										onClick={this.toggleExperience}
-										className='close-trigger'
+										className='nav-trigger'
 									>
 										<span></span>
 									</a>

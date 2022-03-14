@@ -35,10 +35,10 @@
 }
 
 .work-exp-list > li .exp-content {
-	margin: 0 0 15px 25%;
+	margin-left: 20%;
 	background: rgba(50, 68, 84, 1);
 	color: #fff;
-	padding: 30px;
+	padding: 12px;
 	font-size: 1.2em;
 	font-weight: 300;
 	line-height: 1.4;
@@ -92,7 +92,7 @@
 	pointer-events: none;
 	border-right-color: rgba(50, 68, 84, 1);
 	border-width: 10px;
-	top: 70px;
+	top: 30px;
 }
 
 .work-exp-list > li:nth-child(odd) .exp-content:after {
@@ -100,8 +100,8 @@
 }
 
 .work-exp-list > li .exp-main-icon {
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	top: 3%;
 	font-style: normal;
 	font-weight: normal;
@@ -135,14 +135,14 @@
 }
 
 .faPra {
-	display: inline-block;
+	display: flex;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-size: 70px;
-	vertical-align: middle;
+	justify-content: center;
+	padding: 18px 0;
+    font-size: 56px;
 	color: white;
-	line-height: 150px;
 }
 
 .label {
@@ -162,7 +162,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	position: absolute;
-	top: 30px;
+	top: 15px;
 	right: 20px;
 }
 
@@ -264,6 +264,7 @@ body,
 
 .top-right .swing-panel {
 	transform-origin: right 50%;
+	background: linear-gradient(#ffe70a 7%, #ffe70a 9%, transparent), url("../../assets/cool-tech.jpg") no-repeat center; 	
 	transform: rotateY(100deg) scale(1.5);
 }
 
@@ -422,7 +423,7 @@ body,
 
 .grid-unit:hover .icon {
 	overflow: hidden;
-	color: #000;
+	color: #ffe70a;
 	font-size: 3em;
 }
 
