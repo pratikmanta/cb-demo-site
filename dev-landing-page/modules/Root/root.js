@@ -4,7 +4,7 @@ import './sidebar.css';
 
 import { ActionButton, Sidebar } from '../../components/';
 
-class App extends Component {
+class Root extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -39,23 +39,22 @@ class App extends Component {
 	render() {
 		return (
 			<div className='container'>
-				<Sidebar toggleSidebar={this.toggleSidebar} />
+				<div className='nav-trigger'>
+					<a onClick={this.toggleSidebar}>
+						<span></span>
+					</a>
+				</div>
+				<Sidebar />
 				<main className='content'>
-					<div className='img-box'>
+					<div id='intro-img'>
 						<img
 							src='/assets/pratik.jpg'
 							className='profile animated bounceIn'
-							width='400px'
 						/>
-						{/* <img
-								src='/assets/main-bg-grunge.png'
-								className='grunge'
-								width='400px'
-							/> */}
 					</div>
 
 					<div className='intro'>
-						<div className='typewriter'>Hello, I'm Pratik!</div>
+						<div className='typewriter'>Hey, I'm Pratik!</div>
 					</div>
 					<div className='tagline'>
 						Upcoming Dev | Code Fanatic | Game enthusiast
@@ -83,4 +82,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default Root;
