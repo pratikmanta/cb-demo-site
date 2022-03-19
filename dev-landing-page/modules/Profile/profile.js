@@ -1,7 +1,7 @@
 import React from 'react';
-import './profile.css';
-// import '../Root/sidebar.css';
-// import '../Root/root.css';
+import './profile.scss';
+import '../Root/sidebar.scss';
+import '../Root/root.scss';
 import { profData } from '../../data';
 import { Sidebar } from '../../components';
 import ReactCardFlip from 'react-card-flip';

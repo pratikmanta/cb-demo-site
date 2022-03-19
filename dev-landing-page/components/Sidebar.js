@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 	return (
 		<>
 			<nav className='nav-container' id='navigation'>
 				<div style={styles.imgContainer}>
 					<img
-						src='/assets/pratik.jpg'
+						src={props.profileImage}
 						className='profile'
 						width='100%'
 					/>

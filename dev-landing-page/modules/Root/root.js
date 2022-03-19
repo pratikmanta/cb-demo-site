@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './root.css';
-import './sidebar.css';
+import profileImage from '../../assets/pratik.jpg';
 
 import { ActionButton, Sidebar } from '../../components/';
 
@@ -31,8 +30,9 @@ class Root extends Component {
 		// }
 	};
 
-	toggleSidebar = () => {
+	toggleSidebar = (event) => {
 		var body = document.getElementsByTagName('body')[0];
+		event.preventDefault();
 		body.classList.toggle('nav-open');
 	};
 
@@ -44,11 +44,11 @@ class Root extends Component {
 						<span></span>
 					</a>
 				</div>
-				<Sidebar />
+				<Sidebar profileImage={profileImage}/>
 				<main className='content'>
 					<div id='intro-img'>
 						<img
-							src='/assets/pratik.jpg'
+							src={profileImage}
 							className='profile animated bounceIn'
 						/>
 					</div>
