@@ -5,12 +5,14 @@ import '../Root/root.scss';
 import { profData } from '../../data';
 import { Sidebar } from '../../components';
 import ReactCardFlip from 'react-card-flip';
+import Portfolio from './Portfolio';
 
 class Profile extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			isOpen: false,
+			isPortfolioOpen: false,
+			isExperienceOpen: false,
 			isFlipped: false
 		};
 		this.handleFlip = this.handleFlip.bind(this);
@@ -25,7 +27,14 @@ class Profile extends React.Component {
 	toggleExperience = () => {
 		var exp_trigger = document.getElementById('experience-open');
 		exp_trigger.classList.toggle('active');
-		this.setState({ isOpen: !this.state.isOpen });
+		this.setState({ isExperienceOpen: !this.state.isExperienceOpen });
+	};
+
+	togglePortfolio = () => {
+		var port_trigger = document.getElementById('portfolio-open');
+		
+		port_trigger.classList.toggle('active');
+		this.setState({ isPortfolioOpen: !this.state.isPortfolioOpen });
 	};
 
 	handleFlip = (e) => {
@@ -60,12 +69,12 @@ class Profile extends React.Component {
 	};
 
 	render() {
-		const { isOpen, isFlipped } = this.state;
+		const { isExperienceOpen, isPortfolioOpen, isFlipped } = this.state;
 		return (
 			<div className='container'>
 				<a
 					style={
-						isOpen
+						isPortfolioOpen || isExperienceOpen
 							? { visibility: 'hidden' }
 							: { visibility: 'visible' }
 					}
@@ -77,13 +86,27 @@ class Profile extends React.Component {
 				<Sidebar />
 				<main className='content'>
 					<div className='wrapper'>
-						<section className='grid-unit top-left'>
-							<div className='swing-panel'>
-								<span className='desc'>Coming Soon..!</span>
+						<section id='portfolio-open' className='grid-unit top-left'>
+							{ isPortfolioOpen ? (
+								<div>
+								<a
+									onClick={this.togglePortfolio}
+									className='nav-trigger'
+								>
+									<span></span>
+								</a>
+								<Portfolio />
 							</div>
-							<div className='sphere'></div>
-							<span className='icon fa fa-book'></span>
-							<h4 className='label'>Portfolio</h4>
+							) : (
+								<>
+									<div className='swing-panel' onClick={this.togglePortfolio}>
+										<span className='desc'>Coming Soon..!</span>
+									</div>
+									<div className='sphere'></div>
+									<span className='icon fa fa-book'></span>
+									<h4 className='label'>Portfolio</h4>
+								</>
+							)}
 						</section>
 						{/* Work Exp Section  */}
 
@@ -91,7 +114,7 @@ class Profile extends React.Component {
 							id='experience-open'
 							className='grid-unit top-right'
 						>
-							{isOpen ? (
+							{isExperienceOpen ? (
 								<div>
 									<a
 										onClick={this.toggleExperience}
