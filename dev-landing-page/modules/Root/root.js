@@ -30,21 +30,18 @@ class Root extends Component {
 		// }
 	};
 
-	toggleSidebar = (event) => {
+	toggleSidebar = () => {
 		var body = document.getElementsByTagName('body')[0];
-		event.preventDefault();
 		body.classList.toggle('nav-open');
 	};
 
 	render() {
 		return (
-			<div className='container'>
-				<div className='nav-trigger'>
-					<a onClick={this.toggleSidebar}>
-						<span></span>
-					</a>
+			<div className='root-container'>
+				<div className='nav-trigger' onClick={this.toggleSidebar}>
+					<span></span>
 				</div>
-				<Sidebar profileImage={profileImage}/>
+				<Sidebar profileImage={profileImage} handleButtonClick={this.handleButtonClick}/>
 				<main className='content'>
 					<div id='intro-img'>
 						<img

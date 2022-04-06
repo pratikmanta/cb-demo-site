@@ -3,7 +3,6 @@ import './profile.scss';
 import '../Root/sidebar.scss';
 import '../Root/root.scss';
 import { profData } from '../../data';
-import { Sidebar } from '../../components';
 import ReactCardFlip from 'react-card-flip';
 import Portfolio from './Portfolio';
 
@@ -18,11 +17,6 @@ class Profile extends React.Component {
 		this.handleFlip = this.handleFlip.bind(this);
 	}
 
-	toggleSidebar = (event) => {
-		var body = document.getElementsByTagName('body')[0];
-		event.preventDefault();
-		body.classList.toggle('nav-open');
-	};
 
 	toggleExperience = () => {
 		var exp_trigger = document.getElementById('experience-open');
@@ -32,12 +26,11 @@ class Profile extends React.Component {
 
 	togglePortfolio = () => {
 		var port_trigger = document.getElementById('portfolio-open');
-		
 		port_trigger.classList.toggle('active');
 		this.setState({ isPortfolioOpen: !this.state.isPortfolioOpen });
 	};
 
-	handleFlip = (e) => {
+	handleFlip = () => {
 		this.setState({ isFlipped: !this.state.isFlipped });
 	};
 
@@ -71,20 +64,7 @@ class Profile extends React.Component {
 	render() {
 		const { isExperienceOpen, isPortfolioOpen, isFlipped } = this.state;
 		return (
-			<div className='container'>
-				<a
-					style={
-						isPortfolioOpen || isExperienceOpen
-							? { visibility: 'hidden' }
-							: { visibility: 'visible' }
-					}
-					onClick={this.toggleSidebar}
-					className='nav-trigger'
-				>
-					<span></span>
-				</a>
-				<Sidebar />
-				<main className='content'>
+			<div className='profile-container'>
 					<div className='wrapper'>
 						<section id='portfolio-open' className='grid-unit top-left'>
 							{ isPortfolioOpen ? (
@@ -191,7 +171,7 @@ class Profile extends React.Component {
 									</h2>
 									<div className='profile-content'>
 										<p>
-											Hello! My name is <strong>Pratik Manta</strong>.
+											Hi! This is <strong>Pratik Manta</strong>.
 											I am a Front End Developer & coding has changed
 											my world . It's not just about apps & websites
 											though! Learning to code helped me develop my
@@ -200,8 +180,7 @@ class Profile extends React.Component {
 											create static websites & CSS animations, but I
 											can also develop Web & Mobile Applications using
 											React/React-Native following the latest coding
-											standards.Join me in this rewarding journey.
-											Let's have fun , crush projects and learn along
+											standards.Join me and Let's have fun and learn along
 											the way while we're at it!
 										</p>
 									</div>
@@ -209,7 +188,7 @@ class Profile extends React.Component {
 							</ReactCardFlip>
 						</section>
 					</div>
-				</main>
+				
 				<div className='overlay'></div>
 			</div>
 		);

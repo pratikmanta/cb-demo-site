@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Sidebar = (props) => {
+
+	const handleRedirect = () => {
+		props.handleButtonClick();
+		document.querySelector('body').classList.remove('nav-open');
+	}
+
 	return (
 		<>
 			<nav className='nav-container' id='navigation'>
@@ -15,28 +21,13 @@ const Sidebar = (props) => {
 					<h2>Front-End Developer</h2>
 				</div>
 				<ul className='nav'>
-					<li style={styles.listStyle}>
-						<i style={styles.iconStyle} className='fas fa-user'></i>
-						<a style={styles.textStyles} href='#0'>
-							About
-						</a>
-					</li>
-					<li style={styles.listStyle}>
+					<li style={styles.listStyle} onClick={handleRedirect}>
 						<i
 							style={styles.iconStyle}
 							className='fas fa-bullseye'
 						></i>
-						<a style={styles.textStyles} href='#0'>
-							Work
-						</a>
-					</li>
-					<li style={styles.listStyle}>
-						<i
-							style={styles.iconStyle}
-							className='fas fa-envelope'
-						></i>
-						<a style={styles.textStyles} href='#0'>
-							Contact
+						<a style={styles.textStyles}>
+							Profile
 						</a>
 					</li>
 				</ul>

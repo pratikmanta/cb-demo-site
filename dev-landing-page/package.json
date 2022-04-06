@@ -4,9 +4,8 @@
 	"description": "Personal portfolio page",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --open",
-		"create": "webpack",
-		"build": "webpack -p --mode=production",
+		"start": "webpack-dev-server --open --config webpack.dev.js",
+		"build": "webpack --config webpack.prod.js",
 		"test": "jest"
 	},
 	"keywords": [],
@@ -38,6 +37,7 @@
 		"url-loader": "^4.1.1",
 		"webpack": "^5.70.0",
 		"webpack-cli": "^4.9.2",
-		"webpack-dev-server": "^4.7.4"
+		"webpack-dev-server": "^4.7.4",
+		"webpack-merge": "^5.8.0"
 	}
 }
